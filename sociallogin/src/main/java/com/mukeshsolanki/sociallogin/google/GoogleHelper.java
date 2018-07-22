@@ -40,7 +40,6 @@ public class GoogleHelper implements GoogleApiClient.OnConnectionFailedListener 
     return gso.build();
   }
 
-                .build();
   private void buildGoogleApiClient(@NonNull GoogleSignInOptions gso) {
     mGoogleApiClient = new GoogleApiClient.Builder(mContext).enableAutoManage(mContext, this)
         .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
