@@ -43,14 +43,14 @@ public class FacebookHelper {
   public void performSignIn(Activity activity) {
     LoginManager.getInstance()
         .logInWithReadPermissions(activity,
-            Arrays.asList("public_profile", "user_friends", "email", "gender"));
+            Arrays.asList("public_profile", "user_friends", "email", "user_gender", "user_birthday","user_age_range"));
   }
 
   public void performSignIn(Fragment fragment) {
 
      LoginManager.getInstance()
         .logInWithReadPermissions(fragment,
-            Arrays.asList("public_profile", "user_friends", "email", "gender"));
+            Arrays.asList("public_profile", "user_friends", "email", "user_gender", "user_birthday", "user_age_range"));
   }
 
   public void onActivityResult(int requestCode, int resultCode, Intent data) {
