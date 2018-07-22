@@ -34,12 +34,13 @@ public class GoogleHelper implements GoogleApiClient.OnConnectionFailedListener 
   }
 
   private GoogleSignInOptions buildSignInOptions(@Nullable String serverClientId) {
-    GoogleSignInOptions.Builder gso =
-        new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail();
-    if (serverClientId != null) gso.requestIdToken(serverClientId);
+            GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail();
     return gso.build();
   }
 
+                .build();
   private void buildGoogleApiClient(@NonNull GoogleSignInOptions gso) {
     mGoogleApiClient = new GoogleApiClient.Builder(mContext).enableAutoManage(mContext, this)
         .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
